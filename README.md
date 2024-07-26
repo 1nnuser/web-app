@@ -9,8 +9,8 @@
 
 ## О проекте
 Проект состоит из двух частей: backend (API) и frontend.
-frontend: localhost
-backend: localhost/api
+\n frontend: localhost
+\n backend: localhost/api
 
 При первом запросе к localhost произойдет первичная генерация данных и создание таблиц, может потребоваться повторить запрос (первая генерация занимает +- до 3с). 
 
