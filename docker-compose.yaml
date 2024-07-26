@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - './src/frontend/public:/var/www/html'  # каталог  фронтенда
+      - './docker/nginx/conf.d:/etc/nginx/conf.d'
+    networks:
+      - app-network
+
+  php:
+    build: ./docker/php
+    volumes:
+      - ./src/backend:/app
+    working_dir: /app
+    user: '1000:1000'
+    ports:
+      - 8000:8000
+    networks:
+      - app-network
+    command: php -S 0.0.0.0:8000 -t /app
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0.39
+    hostname: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=courier_schedule
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=qwerty123
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+
+
+networks:
+  app-network:
+    driver: bridge

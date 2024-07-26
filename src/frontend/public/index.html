@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <hr>
+    <div class="main">
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <div class="form-get">
+                    <div>
+                        <div class="header-delivery">
+                            <h2>Оформление доставки</h2>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="start">Выберите дату отправки:</label>
+                                <input type="date" id="date" name="date" value="2024-07-22" min="2024-07-01" max="2024-07-31" /> <br> <br>
+                            </div>
+                            <span>Регион</span>
+                            <select id="region" name="region" class="form-select">
+                                <option value="1">Санкт-Петербург</option>
+                                <option value="2">Уфа</option>
+                                <option value="3">Нижний Новгород</option>
+                                <option value="4">Владимир</option>
+                                <option value="5">Кострома</option>
+                                <option value="6">Якб</option>
+                                <option value="7">Ковров</option>
+                                <option value="8">Воронеж</option>
+                                <option value="9">Самара</option>
+                                <option value="10">Астрахань</option>
+                            </select> <br>
+                            <select id="courier-select" class="form-select">
+                              <option value="">Выберите курьера</option>
+                            </select>
+                            <br>
+                            <span id="couriers-free">Свободных курьеров: -</span><br>
+                            <span id="couriers-range">Промежуток доставки: -</span> 
+                            <br><br>
+                            <button type="submit" class="btn btn-primary" id="sumbit-delivery">Подтвердить доставку</button>
+                        </form>
+                    </div>
+                </div>
+
+                <hr>
+                <br> <br>
+                <div class="SL"> 
+                    <div class="all_trips">
+                        <h3>Все поездки</h3>
+                    </div>
+                    <span id="all-count-record">Всего записей: -</span> <br> <br>
+                    <span>Укажите кол-во вывода -></span>
+                    <input type="text" name="" id="count-delivery" value="3"><br>
+
+                    <select name="df" id="select-sort" hidden>
+                      <option value="">NONE</option>
+                      <option value="asc">ASC</option>
+                      <option value="desc">DESC</option>
+                    </select>
+                     <br>
+                    Вывод с Date = -><input type="text" id="date-search" name="date-search" value="2024-05-26" min="2024-01-01" max="2024-12-31" /> <br> <br>
+
+                    <table id="couriers-table" class="table">
+                      <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>Имя курьера</th>
+                              <th>ID курьера</th>
+                              <th>Доставка в</th>
+                              <th>Дата поездки</th>
+                              <th>Дата окончания поездки</th>
+                              <th>Статус поездки</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+                </div>                
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/ajax/sendPostRequest.js"></script>
+    <script src="js/ajax/sendGetRequest.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
