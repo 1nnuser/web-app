@@ -53,7 +53,7 @@ INSERT INTO regions (name, delivery_time) VALUES
     ('Kovrov', 3),
     ('Voronezh', 4),
     ('Samara', 3),
-    ('Astrakhan', 3)
+    ('Astrakhan', 3);
 
 INSERT INTO trips (courier_id, region_id, trip_date, trip_date_end, trip_status) VALUES
     (1, 1, '2023-05-26', '2023-05-28', 'completed'),
@@ -67,20 +67,4 @@ INSERT INTO trips (courier_id, region_id, trip_date, trip_date_end, trip_status)
     (4, 3, '2023-07-07', '2023-07-10', 'completed'),
     (5, 4, '2023-07-08', '2023-07-11', 'completed'),
     (6, 5, '2023-07-09', '2023-07-12', 'completed'),
-    (7, 6, '2023-07-10', '2023-07-13', 'completed'),
-
-SELECT 
-c.full_name,
-c.id,
-t.trip_date,
-t.trip_date_end,
-t.trip_status,
-r.name
-FROM 
-couriers c
-JOIN 
-trips t ON c.id = t.courier_id
-JOIN
-regions r ON t.region_id = r.id
-WHERE t.trip_date = '2023-05-26'
-LIMIT 5 OFFSET 0;";
+    (7, 6, '2023-07-10', '2023-07-13', 'completed');
